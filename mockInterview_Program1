@@ -1,0 +1,117 @@
+package mockinterview;
+//1..Given an array of integers, write a Java program to find and print
+//    all the duplicate elements.
+/**
+ *1. The ArrayDuplicateElement class demonstrates how to find and print duplicate elements
+ *2.  in an array using nested loops.
+ *3.  Declare and initialize an array with some elements, including duplicates.
+ *4. Display a message indicating that we are finding duplicate elements.
+ *5.  Iterate through each element in the array using nested loops.
+ *6.  Compare the current element with elements after i
+ *7.If a duplicate is found, print it.
+ *  
+ * @author abhay kumar sahu
+ *  
+ */
+
+
+public class ArrayDuplicateElement{
+
+	public static void main(String[] args) {
+		int arr[] = {10,20,30,40,60,70,80,10,20};
+		System.out.println("Duplicate elements in given array: ");
+        for (int i = 0; i < arr.length; i++) 
+        {
+            for (int j = i + 1; j < arr.length; j++)
+            {
+                if (arr[i] == arr[j]) 
+                {
+                    System.out.println(arr[j]);
+                }
+            }
+        }
+    }
+
+		
+
+	}
+
+/**output
+Duplicate elements in given array: 
+10
+20 */
+=============================================================================================
+package mockinterview;
+
+//  2.Write a Java function to check if two strings are
+//     anagrams of each other.
+
+import java.util.Arrays;
+
+public class AnagramCheck {
+    public static void main(String[] args) {
+        String str1 = "sum";
+        String str2 = "mus";
+
+        str1 = str1.toLowerCase();
+        str2 = str2.toLowerCase();
+
+        // check if length is same
+        boolean result = str1.length() == str2.length() &&
+                Arrays.equals(
+                        str1.chars().sorted().toArray(),
+                        str2.chars().sorted().toArray()
+                );
+
+        if (result) 
+        {
+            System.out.println(str1 + " and " + str2 + " are anagram.");
+        } else 
+        {
+            System.out.println(str1 + " and " + str2 + " are not anagram.");
+        }
+    }
+}
+//output
+//sum and mus are anagram.
+===========================================================================================
+
+
+package mockinterview;
+
+//3..Write a Java program to print a right-angled triangle of stars. 
+//   The number of rows should be taken as input.
+import java.util.Scanner;
+
+public class RightAngelTriangle {
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter the number of rows:");
+        int row = sc.nextInt();
+
+        for (int i = 1; i <= row; i++) // outer loop for row
+        	{
+            for (int j = 1; j <= i; j++) // // Inner loop for printing stars in each row
+            {
+                System.out.print("* ");
+            }
+            System.out.println(); // Move to the next line after each row
+        }
+    }
+    }
+
+/**output
+Enter the number of rows:
+5
+* 
+* * 
+* * * 
+* * * * 
+* * * * * 
+
+*/
+
+
+
+
